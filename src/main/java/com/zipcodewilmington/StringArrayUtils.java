@@ -3,6 +3,7 @@ package com.zipcodewilmington;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Objects;
 
 /**
  * Created by leon on 1/29/18.
@@ -127,7 +128,24 @@ false        String[] array = {"a", "b", "c", "d"};
      * @return number of occurrences the specified `value` has occurred
      */ // TODO
     public static int getNumberOfOccurrences(String[] array, String value) {
-        return 0;
+        /*
+        String[] array = {"aba", "aba", "baa", "bab", "bba", "bba", "bba", "bba", "bbb", "bbb"};
+        int expected = 4;
+
+        String[] array = {"aba", "aba", "baa", "bab", "bba", "bba", "bba", "bba", "bbb", "bbb"};
+        int expected = 2;
+
+        String[] array = {"aba", "aba", "baa", "bab", "bba", "bba", "bba", "bba", "bbb", "bbb"};
+        int expected = 4;
+         */
+
+        int counter = 0;
+        for (int i = 0; i < array.length; i++) {
+            if(Objects.equals(value,array[i])){
+                counter++;
+            }
+        }
+        return counter; //Returns Int... Not Boolean
     }
 
     /**
@@ -155,6 +173,4 @@ false        String[] array = {"a", "b", "c", "d"};
     public static String[] packConsecutiveDuplicates(String[] array) {
         return null;
     }
-
-
 }
