@@ -73,6 +73,19 @@ public class StringArrayUtils {
      * @return true if the order of the array is the same backwards and forwards
      */ // TODO
     public static boolean isPalindromic(String[] array) {
+        /*
+ true       String[] array = {"a", "b", "c", "b", "a"};
+ true       String[] array = {"Is this a palindrome?", "This is a palindrome", "Is this a palindrome?"};
+ false       String[] array = {"Is this a plaindrome?", "This is not a plaindrome", "Is this a palindrome?", "This is not a palindrome"};
+         */
+        String[] reverseStrArr = new String[array.length];
+
+        for(int i =  0, j = array.length - 1; i < array.length; i++, j--){
+            reverseStrArr[i] = array[j];
+        }
+            if(Arrays.equals(array, reverseStrArr)){//array == reverseStrArr is incorrect. Use Arrays.equals();
+                return true;
+            }
         return false;
     }
 
@@ -81,6 +94,7 @@ public class StringArrayUtils {
      * @return true if each letter in the alphabet has been used in the array
      */ // TODO
     public static boolean isPangramic(String[] array) {
+
         return false;
     }
 
