@@ -94,8 +94,31 @@ public class StringArrayUtils {
      * @return true if each letter in the alphabet has been used in the array
      */ // TODO
     public static boolean isPangramic(String[] array) {
+/*
+true        String[] array = {"The quick brown", "Fox jumps over", "The lazy dog"};
+true        String[] array = {"The", "quick", "onyx", "goblin", "jumps", "over", "the", "lazy", "dwarf"};
+true        String[] array = {"Five quacking", "zephyrs", "jolt my", "wax bed"};
+false        String[] array = {"a", "b", "c", "d"};
 
-        return false;
+ */
+       /*int length = 0;
+       for(String arrStr : array){
+           length += arrStr.length();
+       }*/ //May not need this
+        //ArrayList <String> newArrayList = new ArrayList<>();
+        int counter = 0;
+        String[] alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+        String str = String.join(",", array);
+        //for(String strArr : array) {
+            for (int i = 0; i < alphabet.length; i++) {
+                if (str.toLowerCase().contains(alphabet[i])) {
+                    counter++;
+                    //This needs an if statement to compare the parameter against the alphabet array.
+                }
+
+            }
+        //}
+        return counter == 26;
     }
 
     /**
