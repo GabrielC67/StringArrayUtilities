@@ -154,8 +154,27 @@ false        String[] array = {"a", "b", "c", "d"};
      * @return array with identical contents excluding values of `value`
      */ // TODO
     public static String[] removeValue(String[] array, String valueToRemove) {
+        /*
+        String[] array = {"The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"};
+        String[] expected = {"quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"};
+        String[] actual = StringArrayUtils.removeValue(array, "The");
 
-        return null;
+        String[] array = {"the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"};
+        String[] expected = {"the", "brown", "fox", "jumps", "over", "the", "lazy", "dog"};
+        String[] actual = StringArrayUtils.removeValue(array, "quick");
+
+        String[] array = {"the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"};
+        String[] expected = {"the", "quick", "fox", "jumps", "over", "the", "lazy", "dog"};
+        String[] actual = StringArrayUtils.removeValue(array, "brown");
+         */
+
+
+
+
+
+
+
+        return null; //Returns a String array
     }
 
     /**
