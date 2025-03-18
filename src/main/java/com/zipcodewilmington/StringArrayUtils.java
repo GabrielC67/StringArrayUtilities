@@ -165,14 +165,13 @@ false        String[] array = {"a", "b", "c", "d"};
         String[] expected = {"the", "quick", "fox", "jumps", "over", "the", "lazy", "dog"};
         String[] actual = StringArrayUtils.removeValue(array, "brown");
          */
-
-
-
-
-
-
-
-        return null; //Returns a String array
+        ArrayList<String> newArr = new ArrayList<>(array.length);
+        for(String str : array){
+            if (!str.equals(valueToRemove)){
+                newArr.add(str);
+            }
+        }
+        return newArr.toArray(new String[array.length - 1]);
     }
 
     /**
