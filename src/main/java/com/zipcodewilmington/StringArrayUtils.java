@@ -47,8 +47,8 @@ public class StringArrayUtils {
      * @return true if the array contains the specified `value`
      */ // TODO
     public static boolean contains(String[] array, String value) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == value) {
+        for (String s : array) {
+            if (Objects.equals(s, value)) {
                 return true;
             }
         }
@@ -84,10 +84,8 @@ public class StringArrayUtils {
         for(int i =  0, j = array.length - 1; i < array.length; i++, j--){
             reverseStrArr[i] = array[j];
         }
-            if(Arrays.equals(array, reverseStrArr)){//array == reverseStrArr is incorrect. Use Arrays.equals();
-                return true;
-            }
-        return false;
+        //array == reverseStrArr is incorrect. Use Arrays.equals();
+        return Arrays.equals(array, reverseStrArr);
     }
 
     /**
@@ -111,13 +109,13 @@ false        String[] array = {"a", "b", "c", "d"};
         String[] alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
         String str = String.join(",", array);
         //for(String strArr : array) {
-            for (int i = 0; i < alphabet.length; i++) {
-                if (str.toLowerCase().contains(alphabet[i])) {
-                    counter++;
-                    //This needs an if statement to compare the parameter against the alphabet array.
-                }
-
+        for (String s : alphabet) {
+            if (str.toLowerCase().contains(s)) {
+                counter++;
+                //This needs an if statement to compare the parameter against the alphabet array.
             }
+
+        }
         //}
         return counter == 26;
     }
@@ -140,8 +138,8 @@ false        String[] array = {"a", "b", "c", "d"};
          */
 
         int counter = 0;
-        for (int i = 0; i < array.length; i++) {
-            if(Objects.equals(value,array[i])){
+        for (String s : array) {
+            if (Objects.equals(value, s)) {
                 counter++;
             }
         }
