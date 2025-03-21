@@ -1,9 +1,8 @@
 package com.zipcodewilmington;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Objects;
+import java.util.*;
+
+import static java.util.List.of;
 
 /**
  * Created by leon on 1/29/18.
@@ -152,19 +151,7 @@ false        String[] array = {"a", "b", "c", "d"};
      * @return array with identical contents excluding values of `value`
      */ // TODO
     public static String[] removeValue(String[] array, String valueToRemove) {
-        /*
-        String[] array = {"The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"};
-        String[] expected = {"quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"};
-        String[] actual = StringArrayUtils.removeValue(array, "The");
 
-        String[] array = {"the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"};
-        String[] expected = {"the", "brown", "fox", "jumps", "over", "the", "lazy", "dog"};
-        String[] actual = StringArrayUtils.removeValue(array, "quick");
-
-        String[] array = {"the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"};
-        String[] expected = {"the", "quick", "fox", "jumps", "over", "the", "lazy", "dog"};
-        String[] actual = StringArrayUtils.removeValue(array, "brown");
-         */
         ArrayList<String> newArr = new ArrayList<>(array.length);
         for(String str : array){
             if (!str.equals(valueToRemove)){
@@ -179,7 +166,16 @@ false        String[] array = {"a", "b", "c", "d"};
      * @return array of Strings with consecutive duplicates removes
      */ // TODO
     public static String[] removeConsecutiveDuplicates(String[] array) {
-        return null;
+        ArrayList<String> duplicateRemove = new ArrayList<>();
+        duplicateRemove.add(array[0]);
+        for (int i = 1; i <= array.length - 1; i++) {
+            if (array[i] != array[i - 1]){
+                duplicateRemove.add(array[i]);
+            }
+        }
+        return duplicateRemove.toArray(new String[duplicateRemove.size()]);
+        // Arrays.copyOf(duplicateRemove, duplicateRemove.size(),String[].class);
+        //        String[] expected = {"aba", "baa", "bab", "bba", "bbb"};
     }
 
     /**
@@ -187,6 +183,7 @@ false        String[] array = {"a", "b", "c", "d"};
      * @return array of Strings with each consecutive duplicate occurrence concatenated as a single string in an array of Strings
      */ // TODO
     public static String[] packConsecutiveDuplicates(String[] array) {
+
         return null;
     }
 }
